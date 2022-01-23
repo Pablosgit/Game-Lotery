@@ -1,0 +1,36 @@
+.content-result-bet {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: grid;
+  grid-template-columns: 1fr 280px;
+  grid-template-rows: 1fr;
+}
+
+button{
+  padding: 10px;
+}
+
+.ball-Winner {
+  width: 40px;
+  height: 40px;
+  background-color: grey;
+  font-size: 1em;
+  margin: 10px auto;
+  border-radius: 50%;
+  line-height: 2.5em;
+}
+
+.content-menssage {
+  text-align: center;
+  padding: 20px;
+  background-color: white;
+  margin: 10px;
+  display: flex;
+  flex-direction:column;
+  flex-wrap:wrap;
+  justify-content: center;
+  align-content: center;
+}

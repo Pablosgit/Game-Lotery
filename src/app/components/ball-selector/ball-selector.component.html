@@ -1,0 +1,16 @@
+<div class="content-balls-selector">
+    <h3>Numbers</h3>
+    <ul class="content-balls" >
+      <li
+        *ngFor="let ball of balls"
+        [ngStyle]="{ 'background-color': ball.color}"
+        (click)="onSelectBall(ball)"
+        [class.selected]="ball.selected"
+      >
+        {{ball.id}}
+      </li>
+    </ul>
+    <div class="content-action-clear">
+      <button (click)="onclearSelection()">Clear Selection</button>
+    </div>
+</div>
