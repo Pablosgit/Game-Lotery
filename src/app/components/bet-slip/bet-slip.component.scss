@@ -1,9 +1,13 @@
-.content-app-bet-slip{
+.content-selected-ball{
   background-color:white;
   padding: 20px;
 }
 
-.content-app-bet-slip ul.conten-select-ball{
+.content-selected-ball{
+  height: 25px;
+}
+
+.content-app-bet-slip ul.content-list-ball{
   list-style: none;
   text-align: center;
   margin: 0;
@@ -12,7 +16,7 @@
 }
 
 
-.content-app-bet-slip ul.conten-select-ball li{
+.content-app-bet-slip ul.content-list-ball li{
   display: inline-block;
   width: 22px;
   height: 22px;
@@ -25,8 +29,10 @@
 }
 
 .content-imput-bet{
-  margin-bottom: 50px;
+  margin-bottom: 25px;
   text-align: center;
+  background-color:white;
+  padding-bottom: 50px;
 }
 
 .content-imput-bet label{

@@ -1,17 +1,18 @@
 <div class="content-app-bet-slip">
-  <ul class="conten-select-ball">
-    <li
-      *ngFor="let ball of ballsSelected; trackBy: trackByBalls"
-      [ngStyle]="{ 'background-color': ball.color}"
-    >
-    {{ball.id}}
-    </li>
-  </ul>
+  <div class="content-selected-ball">
+    <ul class="content-list-ball">
+      <li
+        *ngFor="let ball of ballsSelected; trackBy: trackByBalls"
+        [ngStyle]="{ 'background-color': ball.color}"
+      >
+      {{ball.id}}
+      </li>
+    </ul>
+  </div>
   <form [formGroup]="formBet">
   <div class="content-imput-bet">
       <label> {{ numBalls }} x </label>
-      <input type="number" formControlName="betUser" [(ngModel)]="betUser" />
-      <button type="button" (click)="onCalcTotalBet()">Ok</button>
+      <input type="number" formControlName="betUser" [(ngModel)]="betUser" (change)="onCalcTotalBet()" />
       <div class="msg-error" *ngIf="formBet.controls['betUser'].errors?.['min']">Min. bet is 5€</div>
   </div>
 <div class="content-actions-bet">

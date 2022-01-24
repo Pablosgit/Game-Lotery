@@ -1,12 +1,11 @@
-import {Component, Input, ChangeDetectionStrategy, OnInit, Output, EventEmitter} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import { BallselectionService} from '../../services/ballselection.service'
 import {Ball} from '../../modal/ball-option';
 
 @Component({
   selector: 'app-bet-result',
   templateUrl: './bet-result.component.html',
-  styleUrls: ['./bet-result.component.scss'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  styleUrls: ['./bet-result.component.scss']
 })
 export class BetResultComponent implements OnInit {
 
@@ -25,7 +24,7 @@ export class BetResultComponent implements OnInit {
     this.message = getWinner ? 'You Win' : 'You Lost';
   }
 
-  public restartLotery() {
+  public restartBet() {
     this.restart.emit();
   }
 

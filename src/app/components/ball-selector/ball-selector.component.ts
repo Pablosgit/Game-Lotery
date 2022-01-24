@@ -13,13 +13,12 @@ export class BallSelectorComponent implements OnInit {
   isSelectedBall: boolean = false;
   maxSectedBall: number = 8;
 
-
   constructor( private ballService:BallselectionService ) {
     this.balls = this.ballService.getBalls()
   }
 
   onSelectBall(ball:Ball):void{
-    this.isSelectedBall= this.ballService.isSelectedBall(ball);
+    this.isSelectedBall = this.ballService.isSelectedBall(ball);
     if (!this.isSelectedBall && this.ballService.getNumselectedBall() < this.maxSectedBall) {
       this.ballService.setSelectedBall(ball);
     }

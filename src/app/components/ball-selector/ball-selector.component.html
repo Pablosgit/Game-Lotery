@@ -3,11 +3,11 @@
     <ul class="content-balls" >
       <li
         *ngFor="let ball of balls"
-        [ngStyle]="{ 'background-color': ball.color}"
         (click)="onSelectBall(ball)"
         [class.selected]="ball.selected"
       >
-        {{ball.id}}
+      <span class="fondo-ball" [ngStyle]="{ 'background-color': ball.color}"></span>
+      <span class="num-ball">{{ball.id}}</span>
       </li>
     </ul>
     <div class="content-action-clear">

@@ -31,12 +31,16 @@ export class BetSlipComponent implements OnInit {
   constructor(private ballService: BallselectionService) {
 
     this.subscription = this.ballService.getNumBalls$().subscribe(
-      newNumBalls => this.numBalls = newNumBalls
-    );
+      newNumBalls => {
+        this.numBalls = newNumBalls
+        this.onCalcTotalBet();
+      });
 
     this.subscription = this.ballService.getSelectedBall$().subscribe(
-      newSelectedBalls => this.ballsSelected = newSelectedBalls
-    );
+      newSelectedBalls => {
+        this.ballsSelected = newSelectedBalls;
+        if( this.ballsSelected.length === 0) this.betUser = 0;
+      });
 
   }
 
@@ -55,6 +59,8 @@ export class BetSlipComponent implements OnInit {
 
   restartGame() {
     this.showResults = false;
+    this.betUser = 0;
+    this.totalBetUser = this.ballService.getTotalBet(0);
     this.ballService.remove();
   }
 
