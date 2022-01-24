@@ -16,12 +16,12 @@ export class BallselectionService {
 
   constructor() { }
 
-  // Obtiene las bolas de la base de datos y las pinta.
+  // Get the balls from the database
   getBalls():Ball[] {
     return DataBalls
   }
 
-  // Genera un array nuevo con las bolas seleccionadas por el usuario
+  // Generate a new array with the balls selected by the user
   setSelectedBall(ball:Ball){
       ball.selected = true;
       this.selectedballs.push(ball);
@@ -29,31 +29,32 @@ export class BallselectionService {
       this.selectedBalls$.next(this.selectedballs);
   }
 
-  // Devuelve true o false si la bola se encuentra seleccionada o no
+  // Get number of balls selected
   isSelectedBall(ball:Ball):boolean{
     return this.selectedballs.includes(ball);
   }
 
-  // Devuelve el numero de bolas seleccionada
+  // Get number ball selected
   getNumselectedBall():number{
     return this.selectedballs.length;
   }
 
-  // Devuelve las bolas seleccionadas por el usuario en un observable
+  // Get ball selected observable
   getSelectedBall$(): Observable<Ball[]>{
     return this.selectedBalls$;
   }
 
-  // Devuelve el número de bolas seleccionadas por el usuario en un observable
+  // Get num balls observable
   getNumBalls$(): Observable<number>{
     return this.numBalls$.asObservable();
   }
 
+  // Get all selected ball
   getSelectedBalls(){
     return this.selectedballs
   }
 
-  // Reinicia el número de bolas seleccionadas.
+  // Reset the number of selected balls
   remove(){
     this.selectedballs.map(ball => ball.selected = false);
     this.selectedballs = [];
@@ -61,12 +62,12 @@ export class BallselectionService {
     this.selectedBalls$.next(this.selectedballs);
   }
 
-  // Para pintar total euros apuesta.
+  // Get the total bet
   getTotalBet(bet:number){
       return this.totalPriceBet =  this.selectedballs.length * bet * 1.5 ;
   }
 
-  // Para generar Randow aleatorio.
+  // Get random balls
   getRandomNumber(): Observable<number> {
     return of(Math.round(Math.random() * (10 - 1) + 1));
   }

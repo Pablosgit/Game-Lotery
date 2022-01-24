@@ -4,7 +4,6 @@ import {Ball} from '../../modal/ball-option';
 import {Subscription} from 'rxjs';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
-
 @Component({
   selector: 'app-bet-slip',
   templateUrl: './bet-slip.component.html',
@@ -56,14 +55,12 @@ export class BetSlipComponent implements OnInit {
       });
   }
 
-
   restartGame() {
     this.showResults = false;
     this.betUser = 0;
     this.totalBetUser = this.ballService.getTotalBet(0);
     this.ballService.remove();
   }
-
 
   ngOnInit(): void {
   }

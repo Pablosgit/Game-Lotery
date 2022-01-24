@@ -7,13 +7,13 @@ import {Ball} from '../../modal/ball-option';
   templateUrl: './bet-result.component.html',
   styleUrls: ['./bet-result.component.scss']
 })
+
 export class BetResultComponent implements OnInit {
 
   @Input() number: number = 0;
   @Output() restart = new EventEmitter<void>();
   public balls: Ball[] = []
   public message: string = '';
-
 
   constructor(private ballService: BallselectionService) {}
 
